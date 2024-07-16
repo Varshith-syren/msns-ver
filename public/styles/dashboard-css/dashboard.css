@@ -1,0 +1,474 @@
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../../fonts/Ailerons-Typeface.otf');
+}
+
+
+
+/*@keyframes exit{
+
+    from{
+        opacity: 0.5;
+        scale: 0.8;
+    }
+
+    50%{
+        opacity: 1;
+        scale: 1;
+    }
+    
+    to{
+        scale:0.8;
+        opacity: 0.5;
+        transform: none;
+    }
+}*/
+
+@keyframes slideleft {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes rise-up {
+    from{
+       
+
+        scale: 1.05;
+
+        transform: none;
+    }
+    to{
+        transform: none;
+    }
+
+}
+
+.dashboard{
+    position: relative;
+
+    display: flex;
+    height:100%;
+    width: 100%;
+
+    background-color: transparent;
+}
+
+
+.dashboard-sidepanel{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    z-index: 32;
+
+    
+
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+
+    padding: 0px 30px 0px 30px;
+
+    background-color: black;
+    color: rgb(182, 169, 169);
+
+    animation: slideleft 2s ease 0s 1 normal forwards;
+
+
+}
+
+.dashboard-avatar-pic{
+    width: 30vh;
+    height: 30vh;
+}
+.dashboard-avatar-pic-image{
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    margin: -2vh 0 0 0;
+
+   
+}
+
+.dashboard-avatar-username{
+    margin: 10px 0 10px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+.dashboard-sidepanel-logout{
+    margin: 20px 0;
+    font-size: 0.8em;
+}
+
+.dashboard-sidepanel-logout-anchor{
+    color: rgb(182, 169, 169);
+
+}
+.dashboard-sidepanel-logout:hover{
+    animation: rise-up 1000ms 0ms ease-in both;
+
+}
+.dashboard-sidepanel-logout-anchor:hover{
+    color: white;
+}
+
+
+.dashboard-details{
+    flex:4;
+    background-color: transparent;
+
+    margin:0 0 0 40vh ;
+
+    padding: 2.3em 2em 2em 2em;
+
+    color: white;
+
+}
+
+
+/*USER DETAILS*/
+
+.user-details{
+    background-color: rgb(46, 46, 46);
+    padding: 0.1em 2em;
+
+    border-radius: 2em;
+
+    margin: 0px 0px 25px 0px;
+
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+
+}
+
+.user-details-description-title{
+    text-align: center;
+    font-family: Ailerons;
+    font-size: 2.5em;
+
+    color: rgb(219, 219, 219);
+}
+.user-details-description{
+    font-size: 1em;
+}
+
+
+
+/*LIST OF ISSUED BOOKS*/
+
+.dashboard-books-history{
+    background-color: rgb(46, 46, 46);
+    padding: 1em 1.2em;
+
+    border-radius: 2em;
+
+    margin:0.5em 0 1.5em 0;
+
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+
+}
+
+.dashboard-books-history-title{
+    text-align: center;
+    
+    font-size: 2.5em;
+    font-family: Ailerons;
+
+    margin: 20px 0 30px 0px;
+
+    color: rgb(219, 219, 219);
+
+}
+
+.dashboard-books-history-issued{
+    font-size: 0.8em;
+}
+.dashboard-books-history-issued div{
+    margin: 0.4em 0.2em 0.3em 0.2em;
+}
+
+.dashboard-books-history-issued-bookCard,.dashboard-pending-issue-requests-bookList-bookCard{
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 10px;
+    
+    background-color: rgba(16, 16, 16, 0.729);
+
+    padding: 10px 0 10px 20px;
+    margin: 0 0 10px 0;
+
+
+}
+
+.dashboard-books-history-issued-bookCard div{
+    margin: 0.4em 0.2em 0.3em 0.2em;
+}
+
+.dashboard-books-history-issued-bookCard-bookName{
+    flex:2;
+    
+}
+.dashboard-books-history-issued-bookCard-returnDate{
+    flex:2;
+}
+.dashboard-books-history-issued-bookCard-lateFee{
+    flex: 1;
+}
+
+.dashboard-books-history-issued-bookCard-returnButton{
+    flex:1;
+}
+
+@media (max-width:750px) {
+    .dashboard-books-history-issued-bookCard,.dashboard-pending-issue-requests-bookList-bookCard,.dashboard-pending-return-requests-bookList-bookCard{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+.dashboard-books-history-issued-bookCard-returnButton-button,.dashboard-pending-issue-requests-bookCard-cancelButton-button,.dashboard-pending-return-requests-bookCard-cancelButton-button{
+    padding: 10px 20px;
+
+    font-size: 1em;
+
+    border-radius: 20px;
+    border: none;
+
+    background-color: rgb(46, 46, 46);
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.dashboard-books-history-issued-bookCard-returnButton-button:hover,.dashboard-pending-issue-requests-bookCard-cancelButton-button:hover,.dashboard-pending-return-requests-bookCard-cancelButton-button:hover{
+    background-color: rgb(61, 61, 61);
+}
+
+.dashboard-books-history-issued-bookCard-returnButton-button:active,.dashboard-pending-issue-requests-bookCard-cancelButton-button:active,.dashboard-pending-return-requests-bookCard-cancelButton-button:active{
+    background-color: rgb(76, 75, 75);
+   
+}
+
+
+
+
+/*PENDING ISSUE REQUESTS*/
+
+.dashboard-pending-issue-requests{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: rgb(46, 46, 46);
+
+    padding: 1em 1.2em;
+    margin:0.5em 0 1.5em 0;
+
+
+    border-radius: 2em;
+
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+
+
+}
+
+.dashboard-pending-issue-requests-title{
+    font-family: ailerons;
+    font-size:2.5em;
+    color: rgb(219, 219, 219);
+
+    padding: 0.5em;
+
+    text-align: center;
+
+}
+
+.dashboard-pending-issue-requests-bookList{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.dashboard-pending-issue-requests-bookList-bookCard{
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+
+.dashboard-pending-issue-requests-bookList-bookCard div{
+    margin: 0.4em 0.5em 0.3em 0.5em;
+}
+
+
+
+/*PENDING RETURN REQUESTS*/
+
+.dashboard-pending-return-requests{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: rgb(46, 46, 46);
+
+    padding: 1em 1.2em;
+    margin:0.5em 0 1.5em 0;
+
+
+    border-radius: 2em;
+
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+
+}
+
+.dashboard-pending-return-requests-title{
+    font-family: ailerons;
+    font-size:2.5em;
+    color: rgb(219, 219, 219);
+
+    padding: 0.5em;
+
+    text-align: center;
+
+}
+
+.dashboard-pending-return-requests-bookList{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.dashboard-pending-return-requests-bookList-bookCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-radius: 10px;
+    
+    background-color: rgba(16, 16, 16, 0.729);
+
+    padding: 10px 0 10px 20px;
+    margin: 0 0 10px 0;
+
+    justify-content: space-between;
+    font-size: 0.8em;
+
+
+}
+
+
+.dashboard-pending-return-requests-bookList-bookCard div{
+    margin: 0.4em 0.5em 0.3em 0.5em;
+}
+
+.dashboard-pending-return-requests-bookCard-bookName{
+    flex:2;
+    
+}
+.dashboard-books-history-issued-bookCard-lateFee{
+    flex:1;
+}
+
+.dashboard-pending-return-requests-bookCard-cancelButton{
+    flex:1;
+}
+
+
+
+/*SNACKBAR THAT APPEARS UPON RETURNING A BOOK*/
+
+#return-book-snackbar{
+    visibility: hidden;
+    position: fixed;
+
+    top:100px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(224, 224, 224);
+    color: rgb(18, 18, 18);
+
+    border-radius: 1em;
+
+    font-family: 'Arima';
+    font-weight: 500;
+    font-size: 1.3vw;
+
+    padding: 10px;
+
+    z-index: 39;
+}
+
+@keyframes fade-in{
+    from{
+        top:0;
+        right:0;
+        opacity: 0;
+    }
+
+    to{
+        top:100px;
+        right:10px;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out{
+    from{
+        top:100px;
+        right:10px;
+        opacity: 1;
+    }
+
+    to{
+        top:0px;
+        right:0px;
+        opacity: 0;
+    }
+}
+
+#return-book-snackbar.showSnackbar{
+    visibility:visible;
+
+    animation: fade-in 1s,fade-out 1s 1.5s;
+}

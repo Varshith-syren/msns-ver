@@ -1,0 +1,235 @@
+@font-face {
+  font-family: 'Ailerons';
+  src: url('../../../fonts/Ailerons-Typeface.otf');
+}
+
+
+.admin-issue-requests,.admin-return-requests{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2em;
+
+  font-family: 'ruda';
+  
+}
+
+.admin-issue-requests-container,.admin-return-requests-container{  
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'ruda';
+
+  border-radius: 2em;
+  width: 80%;
+  margin:0 auto;
+  margin-top:20px;
+
+  background-color: #ddd9d96d;
+  background-color: rgba(44, 44, 44, 0.781);
+
+
+  color: white;
+
+  box-shadow: 0.2em 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.5);
+  padding: 1em;
+
+}
+
+.admin-issue-requests-title,.admin-return-requests-title {
+  text-align: center;
+  font-family: Ailerons;
+
+  font-size:3.5em; 
+  padding: 1.1rem;
+
+  color: white;
+
+  background-color: transparent;
+}
+
+
+
+.content {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.book-list {
+  list-style-type: none;
+  padding: 20px;
+  width: 100%;
+}
+
+.book-item {
+  padding: 10px;
+  border: 1px solid #444;
+  margin-bottom: 15px;
+
+  background-color: #333;
+
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.book-item .user {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.6em;
+
+  font-size: 1.2em;
+
+  color: rgb(147, 146, 146);
+}
+
+.book-content{
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  background-color: rgb(30, 29, 29);
+  box-shadow: 2px 2px 1px 3px rgba(0, 0, 0, 0.5);
+
+  border-radius: 1em;
+
+  margin: 0.3em 0 0.3em 0;
+}
+
+.issue-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+}
+
+.issue-buttons-acceptbutton,.issue-buttons-rejectbutton{
+  padding: 0.3em 0.5em;
+
+  background-color: rgb(84, 84, 84);
+  color: white;
+
+  font-weight: bold;
+  font-size: 0.9em;
+
+  margin: 0 0.2em 0 0.2em;
+
+  border-radius: 0.3em;
+
+  border: none;
+
+}
+
+.issue-buttons-rejectbutton{
+  padding: 0.3em 0.65em;
+}
+
+.issue-buttons-acceptbutton:hover,.issue-buttons-rejectbutton:hover{
+  background-color: rgb(99, 98, 98);
+}
+
+.issue-buttons-acceptbutton:active,.issue-buttons-rejectbutton:active{
+  background-color: rgb(74, 74, 74);
+}
+
+.null-container{
+  display: flex;
+  flex-direction: column;
+
+  padding: 0.6em 0.3em;
+  border-radius: 1em;
+
+
+
+
+}
+
+.book-item .book {
+  margin-left: 20px;
+
+  padding: 0.5em;
+}
+
+.book-item .count,.dashboard-books-history-issued-bookCard-lateFee{
+  margin-left: 20px;
+
+  padding: 0.5em;
+
+}
+
+
+
+
+
+
+/*SNACKBAR THAT APPEARS UPON APPROVING/REJECTING A ISSUE REQUEST*/
+
+#issueRequest-book-snackbar,#returnRequest-book-snackbar,#rejectRequest-book-snackbar{
+  visibility: hidden;
+  position: fixed;
+
+  top:100px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(224, 224, 224);
+  color: rgb(18, 18, 18);
+
+  border-radius: 1em;
+
+  font-family: 'Arima';
+  font-weight: 500;
+  font-size: 1.3vw;
+
+  padding: 10px;
+
+  z-index: 39;
+}
+
+@keyframes fade-in{
+  from{
+      top:0;
+      right:0;
+      opacity: 0;
+  }
+
+  to{
+      top:100px;
+      right:10px;
+      opacity: 1;
+  }
+}
+
+@keyframes fade-out{
+  from{
+      top:100px;
+      right:10px;
+      opacity: 1;
+  }
+
+  to{
+      top:0px;
+      right:0px;
+      opacity: 0;
+  }
+}
+
+#issueRequest-book-snackbar.showSnackbar,#returnRequest-book-snackbar.showSnackbar,#rejectRequest-book-snackbar.showSnackbar{
+  visibility:visible;
+
+  animation: fade-in 0.8s,fade-out 0.8s 1.5s;
+}
+
